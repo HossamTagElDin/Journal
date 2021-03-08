@@ -17,7 +17,6 @@ public class req implements ServletRequestListener {
 
     @Override
     public void requestDestroyed(ServletRequestEvent sre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
