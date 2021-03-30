@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/hossam/NetBeansProjects/Journal/web/index.html</file>
+            <file>file:/home/hossam/NetBeansProjects/Journal/src/java/servlets/login.java</file>
+            <file>file:/home/hossam/NetBeansProjects/Journal/src/java/loginfil.java</file>
+            <file>file:/home/hossam/NetBeansProjects/Journal/src/java/NewServletListener.java</file>
+            <file>file:/home/hossam/NetBeansProjects/Journal/src/java/ses.java</file>
         </group>
     </open-files>
 </project-private>

@@ -11,6 +11,7 @@ import java.sql.DriverManager;
 public class dbconnection {
     public static Connection dbconnect(){
         try{
+
         Class.forName("org.apache.derby.jdbc.ClientDriver");
         Connection con =DriverManager.getConnection("jdbc:derby://localhost:1527/journal", "samir", "123");
         return con;

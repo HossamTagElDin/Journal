@@ -28,9 +28,11 @@ public class login extends HttpServlet {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        System.out.println(username);
 
         try {
             Connection con = (Connection) getServletContext().getAttribute("con");
+
             PreparedStatement p = con.prepareStatement("select * from author where username=? and password=?");
 
             p.setString(1, username);
@@ -38,18 +40,23 @@ public class login extends HttpServlet {
             ResultSet r = p.executeQuery();
 
             if (r.next()) {
+
                 person per = new person();
                 per.setUsername(username);
                 per.setN_articles(r.getInt("n_articles"));
                 per.setF_name(r.getString("f_name"));
                 request.getSession().setAttribute("user", per);
-                Cookie c= new Cookie("name","hossam");
+
+                Cookie c = new Cookie("name", per.getUsername());
+                c.setMaxAge(60 * 60 * 60 * 60);
+                response.setHeader("Expires", "");
+                response.addCookie(c);
                 response.sendRedirect("jsps/home.jsp");
             } else {
                 response.sendRedirect("login error.html");
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 

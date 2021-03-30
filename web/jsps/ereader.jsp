@@ -11,24 +11,33 @@
         <style>
             body
             {
-                background-color: #0B3B72;
+                background-color: yellow;
             }
             h1
             {
-                color:white;
+                color:black;
                 margin-left: 550px;
                 font-size: 50px;
-                margin-top: 50px;  
+                margin-top: 50px; 
+                position: relative;
             }
             div
             {
-                background-color: white;
+                color:yellow;
+                background-color: black;
                 margin:auto;
                 width:500px;
-                height: 300px;
                 margin-bottom: 20px;
-                overflow: scroll;
+                position:relative;
 
+            }
+            p{
+                border:2px solid yellow;
+                width:400px;
+                margin-left: 50px;
+                position: relative;
+                bottom: 20px;
+                padding: 12px;
             }
         </style>
     </head>

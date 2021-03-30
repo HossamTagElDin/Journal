@@ -5,6 +5,10 @@
         <filter-class>loginfil</filter-class>
     </filter>
     <filter-mapping>
+        <filter-name>setlogincookie</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
         <filter-name>loginfil</filter-name>
         <servlet-name>approve</servlet-name>
     </filter-mapping>
@@ -29,12 +33,12 @@
         <url-pattern>/jsps/home.jsp</url-pattern>
     </filter-mapping>
     <listener>
-        <description>RequestListener</description>
-        <listener-class>req</listener-class>
+        <description>ServletContextListener</description>
+        <listener-class>contextlis</listener-class>
     </listener>
     <listener>
-        <description>HttpSessionListener</description>
-        <listener-class>ses</listener-class>
+        <description>RequestListener</description>
+        <listener-class>cookielis</listener-class>
     </listener>
     <servlet>
         <servlet-name>savepost</servlet-name>

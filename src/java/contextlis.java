@@ -21,6 +21,7 @@ public class contextlis implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         Connection con =dbconnection.dbconnect();
         sce.getServletContext().setAttribute("con", con);
+        
     }
 
     @Override

@@ -12,7 +12,7 @@
         <style>
             h1
             {
-                color:white;
+                color:black;
                 margin-left: 550px;
                 font-size: 50px;
                 margin-top: 50px;
@@ -28,10 +28,10 @@
                 width:250px;
                 height: 40px;
                 display:block;
-                border:2px solid white;
+                border:2px solid black;
                 border-radius: 10px;
                 text-decoration: none;
-                color:white;
+                color:black;
                 font-size:40px;
                 font-family: courier;
                 padding-left: 20px;
@@ -40,12 +40,13 @@
             }
             div
             {
-                background-color: white;
+                background-color: black;
                 float:right;
                 width:500px;
                 height: 300px;
                 margin-right: 600px;
                 margin-top: 60px;
+                color:yellow;
             }
             div
             #post-content
@@ -56,28 +57,33 @@
 
         </style>
     </head>
-    <body style="background-color: #0B3B72;">
+    <body style="background-color:yellow ">
         <h1>Legen- wait for it -dary news</h1>
-        <h2 style="color:white;
+        <h2 style="color:black;
             margin-left: 700px;
             font-size: 30px;
             margin-top: 50px;
             ">
-            Welcome,<%=((person) request.getSession().getAttribute("user")).getF_name()%>
+            Welcome,${sessionScope.user.f_name}
 
         </h2>
         <aside>
             <%
+
                 person per = (person) request.getSession().getAttribute("user");
-                if (per.getUsername().equals("samir")) {
-                    out.println("<a href='pending.jsp' >pending</a>");
+                try {
+                    if (per.getUsername().equals("samir")) {
+                        out.println("<a href='pending.jsp' >pending</a>");
+                    }
+                } catch (Exception e) {
+
                 }
             %>
             <% out.println("<a href='../logout' >logout</a>");%>
         </aside>
-        <div style="background-color: #0B3B72;margin-bottom: 20px; " >
+        <div style="background-color: yellow;margin-bottom: 20px; " >
 
-            <form id="post" method="post" action="../savepost" style="background-color: #0B3B72">
+            <form id="post" method="post" action="../savepost" style="background-color: yellow;">
 
                 <input type="text" name="title" style="width:300px;" placeholder="enter the title of the article"><br><br>
                 <textarea name="desc" id="post-content" placeholder="enter the description of the article"></textarea><br>

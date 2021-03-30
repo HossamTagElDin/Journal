@@ -14,6 +14,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -99,16 +100,19 @@ public class loginfil implements Filter {
             FilterChain chain)
             throws IOException, ServletException {
         
+        //casting servlet request and response into http ones
         HttpServletRequest req=(HttpServletRequest)request;
         HttpServletResponse res=(HttpServletResponse)response;
-        try{
+        
+        
+         try{
         if(req.getSession().getAttribute("user").equals(null))
-            res.sendRedirect("index.html");
+            res.sendRedirect("/Journal/index.html");
         chain.doFilter(req, res);
         }
         catch(NullPointerException e)
         {
-            res.sendRedirect("index.html");
+            res.sendRedirect("/Journal/index.html");
             chain.doFilter(req, res);
         }
      
